@@ -1,5 +1,5 @@
 {
-    "name": "sergey/project-first",
+    "name": "sergey21school/project-first",
     "bin": ["bin/brain-games"],
     "type": "project",
     "license": "MIT",
