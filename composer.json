@@ -9,5 +9,12 @@
             "email": "sergius.didenko@gmail.com"
         }
     ],
-    "require": {}
-}
+    "autoload": {
+                "psr-4": {
+                    "BrainGames\\": "src/"
+                }
+            },
+    "require": {
+        "wp-cli/php-cli-tools": "*"
+    }
+},
