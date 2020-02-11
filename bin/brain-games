@@ -1,4 +1,5 @@
 #!/usr/bin/env php
+
 echo 'Welcome to the Brain Games!';
 
-php ../src/Cli.php
+php ../src/Cli.php;

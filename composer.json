@@ -10,11 +10,11 @@
         }
     ],
     "autoload": {
-                "psr-4": {
-                    "BrainGames\\": "src/"
-                }
-            },
+        "psr-4": {
+            "BrainGames\\Cli\\": "src/"
+        }
+    },
     "require": {
         "wp-cli/php-cli-tools": "*"
     }
-},
+}
