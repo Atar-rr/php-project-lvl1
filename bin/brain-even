@@ -12,7 +12,13 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function Braingames\Cli\run;
+use function Braingames\Even\rulesGame;
+use function Braingames\Even\randomGame;
 
 echo 'Welcome to the Brain Games!' . PHP_EOL;
 
-run ();
+rulesGame();
+
+$name = run();
+
+randomGame($name);

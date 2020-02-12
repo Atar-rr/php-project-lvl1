@@ -1,6 +1,6 @@
 {
     "name": "sergey21school/project-first",
-    "bin": ["bin/brain-games"],
+    "bin": ["bin/brain-even"],
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,8 @@
     ],
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Even.php"
         ]
     },
     "require": {
