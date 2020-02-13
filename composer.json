@@ -4,6 +4,7 @@
     "type": "library",
     "license": "MIT",
     "description": "sergey package",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Atar-rr",
