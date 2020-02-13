@@ -1,8 +1,9 @@
 {
     "name": "sergey21school/project-first",
     "bin": ["bin/brain-even"],
-    "type": "project",
+    "type": "library",
     "license": "MIT",
+    "description": "sergey package",
     "authors": [
         {
             "name": "Atar-rr",
