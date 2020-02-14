@@ -1,6 +1,12 @@
 {
     "name": "sergey21school/project-first",
-    "bin": ["bin/brain-even"],
+    "bin": [
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
+    ],
     "type": "library",
     "license": "MIT",
     "description": "sergey package",
@@ -13,7 +19,11 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Even.php"
+            "src/Even.php",
+            "src/Calc.php",
+            "src/Gcd.php",
+            "src/Progression.php",
+            "src/Prime"
         ]
     },
     "require": {
