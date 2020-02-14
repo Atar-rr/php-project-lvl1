@@ -4,12 +4,12 @@ namespace Braingame\Progression;
 
 use function cli\line;
 use function cli\prompt;
-use function Braingames\Cli\run;
-use function Braingames\Cli\makeRandomNum;
-use function Braingames\Cli\sayWelcome;
-use function Braingames\Cli\satRulesGame;
-use function Braingames\Cli\congratule;
-use function Braingames\Cli\checkAnswer;
+use function Help_Function\run;
+use function Help_Function\makeRandomNum;
+use function Help_Function\sayWelcome;
+use function Help_Function\satRulesGame;
+use function Help_Function\congratule;
+use function Help_Function\checkAnswer;
 
 function makeProgression()
 {

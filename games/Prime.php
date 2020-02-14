@@ -4,12 +4,12 @@ namespace Braingames\Prime;
 
 use function cli\line;
 use function cli\prompt;
-use function Braingames\Cli\run;
-use function Braingames\Cli\makeRandomNum;
-use function Braingames\Cli\sayWelcome;
-use function Braingames\Cli\satRulesGame;
-use function Braingames\Cli\congratule;
-use function Braingames\Cli\checkAnswer;
+use function Help_Function\run;
+use function Help_Function\makeRandomNum;
+use function Help_Function\sayWelcome;
+use function Help_Function\satRulesGame;
+use function Help_Function\congratule;
+use function Help_Function\checkAnswer;
 
 function isprime($num)
 {
@@ -34,7 +34,6 @@ function primeGame()
     for ($i = 0; $i < $roundGame; $i++) {
         $randomNum = makeRandomNum();
         $answerCorrect = isprime($randomNum) ? 'yes' : 'no';
-        echo $answerCorrect . PHP_EOL;
         line("Question: $randomNum");
         $answerUser = prompt("Your answer");
         if (!checkAnswer($answerCorrect, $answerUser, $name)) {
