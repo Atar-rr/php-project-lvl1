@@ -17,8 +17,7 @@ function makeProgression()
     $makeNextNum = 2;
     $progressionArr = [$firstNum];
 
-    for ($j = 0; $j < 10; $j++)
-    {
+    for ($j = 0; $j < 10; $j++) {
         $firstNum += $makeNextNum;
         $progressionArr [] = $firstNum;
     }
@@ -33,8 +32,7 @@ function progressionGame()
     rulesGame('What number is missing in the progression?');
     $name = run();
 
-    for ($i = 0; $i < $roundGame; $i++)
-    {
+    for ($i = 0; $i < $roundGame; $i++) {
         $progressionArr = makeProgression();
         $randMiss = randomNum(0, 10);
         $answerCorrect = $progressionArr[$randMiss];
@@ -42,8 +40,9 @@ function progressionGame()
         $progressionStr = implode(' ', $progressionArr);
         line("Qustions: $progressionStr");
         $answerUser = (int)prompt("Your answer");
-        if (!checkAnswer($answerCorrect, $answerUser, $name))
+        if (!checkAnswer($answerCorrect, $answerUser, $name)) {
             exit();
+        }
     }
     congratulation($name);
 }

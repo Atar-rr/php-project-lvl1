@@ -23,7 +23,7 @@
             "src/Calc.php",
             "src/Gcd.php",
             "src/Progression.php",
-            "src/Prime"
+            "src/Prime.php"
         ]
     },
     "require": {

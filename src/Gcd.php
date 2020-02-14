@@ -19,19 +19,19 @@ function gcdGame()
     rulesGame('Find the greatest common divisor of given numbers.');
     $name = run();
 
-    for($i = 0; $i < $roundGame; $i++)
-    {
+    for ($i = 0; $i < $roundGame; $i++) {
         $num1 = randomNum();
         $num2 = randomNum();
         $nod = $num1 < $num2 ? $num1 : $num2;
-        while ($num1 % $nod > 0 || $num2 % $nod > 0){
+        while ($num1 % $nod > 0 || $num2 % $nod > 0) {
             $nod--;
         }
         $answerCorrect = $nod;
         line("Qustions: $num1 $num2");
         $answerUser = (int)prompt("Your answer");
-        if (!checkAnswer($answerCorrect, $answerUser, $name))
+        if (!checkAnswer($answerCorrect, $answerUser, $name)) {
             exit();
+        }
     }
     congratulation($name);
 }

@@ -15,16 +15,16 @@ function randomOperand()
 {
     $operandArr = ['+', '-', '*'];
 
-    return  $operandArr[randomNum(0, 2)];
+    return $operandArr[randomNum(0, 2)];
 }
 
 function makeOperation($operand, $argument1, $argument2)
 {
-    if ($operand === '+'){
+    if ($operand === '+') {
         return $argument1 + $argument2;
-    }elseif ($operand === '-'){
+    } elseif ($operand === '-') {
         return  $argument1 - $argument2;
-    }elseif ($operand === '*'){
+    } elseif ($operand === '*') {
         return  $argument1 * $argument2;
     }
 }
@@ -37,16 +37,16 @@ function calcGame()
     rulesGame('What is the result of the expression?');
     $name = run();
 
-    for($i = 0; $i < $roundGame; $i++)
-    {
+    for ($i = 0; $i < $roundGame; $i++) {
         $argument1 = randomNum();
         $argument2 = randomNum();
         $operand = randomOperand();
         $answerCorrect = makeOperation($operand, $argument1, $argument2);
         line("Question:  $argument1 $operand $argument2");
         $answerUser = (int)prompt("Your answer");
-        if (!checkAnswer($answerCorrect, $answerUser, $name))
+        if (!checkAnswer($answerCorrect, $answerUser, $name)) {
             exit();
+        }
     }
     congratulation($name);
 }

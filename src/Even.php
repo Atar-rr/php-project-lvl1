@@ -11,7 +11,6 @@ use function Braingames\Cli\randomNum;
 use function Braingames\Cli\hello;
 use function Braingames\Cli\rulesGame;
 
-
 function answerCorrect($randomNumber)
 {
     return $randomNumber % 2 === 0 ? 'yes' : 'no';
@@ -29,8 +28,9 @@ function evenGame()
         $answerCorrect = answerCorrect($randomNumber);
         line("Question:  $randomNumber");
         $answerUser = prompt("Your answer");
-        if (!checkAnswer($answerCorrect, $answerUser, $name))
+        if (!checkAnswer($answerCorrect, $answerUser, $name)) {
             exit();
+        }
     }
     congratulation($name);
 }
