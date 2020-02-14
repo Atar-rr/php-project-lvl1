@@ -43,4 +43,4 @@
   <li>In this game you need to find greatest common divisor</li>
 </ul>
 
-[![asciicast](https://asciinema.org/a/dH5l5j6x8VBbZDYAZmchrTjci.svg)](https://asciinema.org/a/dH5l5j6x8VBbZDYAZmchrTjci)
+<a href="https://asciinema.org/a/dH5l5j6x8VBbZDYAZmchrTjci" target="_blank"><img src="https://asciinema.org/a/dH5l5j6x8VBbZDYAZmchrTjci.svg" /></a>
