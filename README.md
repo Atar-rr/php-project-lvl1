@@ -8,7 +8,7 @@
 <strong>Install the game:</strong>
 <ol>
   <li>Enter the command in the terminal: composer global require sergey21school/project-first:dev-master </li>
-  <li>After installation is complete, enter: export PATH=$PATH:$HOME/.composer/vendor/bin </li>
+  <li>After package installation is complete, enter: export PATH=$PATH:$HOME/.composer/vendor/bin </li>
 </ol>
 <strong>Brain-even:</strong>
 <ul>
