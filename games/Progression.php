@@ -5,21 +5,21 @@ namespace Braingame\Progression;
 use function cli\line;
 use function cli\prompt;
 use function Braingames\Cli\run;
-use function Braingames\Cli\randomNum;
-use function Braingames\Cli\hello;
-use function Braingames\Cli\rulesGame;
-use function Braingames\Cli\congratulation;
+use function Braingames\Cli\makeRandomNum;
+use function Braingames\Cli\sayWelcome;
+use function Braingames\Cli\satRulesGame;
+use function Braingames\Cli\congratule;
 use function Braingames\Cli\checkAnswer;
 
 function makeProgression()
 {
-    $firstNum = randomNum();
+    $startNum = makeRandomNum();
     $makeNextNum = 2;
-    $progressionArr = [$firstNum];
+    $progressionArr = [$startNum];
 
     for ($j = 0; $j < 10; $j++) {
-        $firstNum += $makeNextNum;
-        $progressionArr [] = $firstNum;
+        $startNum += $makeNextNum;
+        $progressionArr [] = $startNum;
     }
     return $progressionArr;
 }
@@ -28,21 +28,21 @@ function progressionGame()
 {
     $roundGame = 3;
 
-    hello();
-    rulesGame('What number is missing in the progression?');
+    sayWelcome();
+    satRulesGame('What number is missing in the progression?');
     $name = run();
 
     for ($i = 0; $i < $roundGame; $i++) {
         $progressionArr = makeProgression();
-        $randMiss = randomNum(0, 10);
+        $randMiss = makeRandomNum(0, 10);
         $answerCorrect = $progressionArr[$randMiss];
         $progressionArr[$randMiss] = '..';
         $progressionStr = implode(' ', $progressionArr);
-        line("Qustions: $progressionStr");
+        line("Question: $progressionStr");
         $answerUser = (int)prompt("Your answer");
         if (!checkAnswer($answerCorrect, $answerUser, $name)) {
-            exit();
+            return ;
         }
     }
-    congratulation($name);
+    congratule($name);
 }

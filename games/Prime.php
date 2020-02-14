@@ -5,10 +5,10 @@ namespace Braingames\Prime;
 use function cli\line;
 use function cli\prompt;
 use function Braingames\Cli\run;
-use function Braingames\Cli\randomNum;
-use function Braingames\Cli\hello;
-use function Braingames\Cli\rulesGame;
-use function Braingames\Cli\congratulation;
+use function Braingames\Cli\makeRandomNum;
+use function Braingames\Cli\sayWelcome;
+use function Braingames\Cli\satRulesGame;
+use function Braingames\Cli\congratule;
 use function Braingames\Cli\checkAnswer;
 
 function isprime($num)
@@ -28,18 +28,18 @@ function primeGame()
 {
     $roundGame = 3;
 
-    hello();
-    rulesGame('Answer "yes" if given number is prime. Otherwise answer "no".');
+    sayWelcome();
+    satRulesGame('Answer "yes" if given number is prime. Otherwise answer "no".');
     $name = run();
     for ($i = 0; $i < $roundGame; $i++) {
-        $randomNum = randomNum();
+        $randomNum = makeRandomNum();
         $answerCorrect = isprime($randomNum) ? 'yes' : 'no';
         echo $answerCorrect . PHP_EOL;
-        line("Qustions: $randomNum");
+        line("Question: $randomNum");
         $answerUser = prompt("Your answer");
         if (!checkAnswer($answerCorrect, $answerUser, $name)) {
-            exit();
+            return ;
         }
     }
-    congratulation($name);
+    congratule($name);
 }

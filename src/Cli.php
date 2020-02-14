@@ -12,22 +12,22 @@ function run()
     return $name;
 }
 
-function randomNum($min = 1, $max = 100)
+function makeRandomNum($min = 1, $max = 100)
 {
     return rand($min, $max);
 }
 
-function hello()
+function sayWelcome()
 {
     line('Welcome to the Brain Games!');
 }
 
-function rulesGame($rules)
+function satRulesGame($rules)
 {
     line($rules . PHP_EOL);
 }
 
-function congratulation($name)
+function congratule($name)
 {
     line("Congratulations, $name!");
 }
