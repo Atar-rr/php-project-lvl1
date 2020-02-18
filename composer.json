@@ -7,7 +7,7 @@
         "bin/brain-progression",
         "bin/brain-prime"
     ],
-    "type": "library",
+    "type": "project",
     "license": "MIT",
     "description": "sergey package",
     "authors": [
@@ -18,12 +18,12 @@
     ],
     "autoload": {
         "files": [
-            "src/Help_function.php",
-            "games/Even.php",
-            "games/Calc.php",
-            "games/Gcd.php",
-            "games/Progression.php",
-            "games/Prime.php"
+            "src/games/Even.php",
+            "src/games/Calc.php",
+            "src/games/Gcd.php",
+            "src/games/Progression.php",
+            "src/games/Prime.php",
+            "src/Engine.php"
         ]
     },
     "require": {
