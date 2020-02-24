@@ -5,24 +5,24 @@ namespace Src\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function runEngine($gameFunc, $rulesGame)
+function runEngine($gameFunc, $gameRule)
 {
-    $roundGames = 3;
+    $roundsCount = 3;
     line('Welcome to the Brain Games!');
-    line($rulesGame . "\n");
+    line($gameRule . "\n");
     $name = prompt('May I have your name?');
     line("Hello, $name!");
 
-    for ($i = 0; $i < $roundGames; $i++) {
-        $informationForGame = $gameFunc();
-        line("Question: $informationForGame[question]");
-        $answerUser = prompt("Your answer");
-        if ($informationForGame['answerCorrect'] == (string)$answerUser) {
+    for ($i = 0; $i < $roundsCount; $i++) {
+        ['correctAnswer' => $correctAnswer, 'question' => $question] = $gameFunc();
+        line("Question: $question");
+        $userAnswer = prompt("Your answer");
+        if ($correctAnswer == (string)$userAnswer) {
             line('Correct');
         } else {
-            line("$answerUser is wrong answer ;(. Correct answer was $informationForGame[answerCorrect]. ");
+            line("$userAnswer is wrong answer ;(. Correct answer was $correctAnswer. ");
             line("Let's try again, $name!");
-            return 0;
+            exit();
         }
     }
     line("Congratulations, $name!");

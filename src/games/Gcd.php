@@ -4,19 +4,24 @@ namespace Braingames\Gcd;
 
 use function Src\Engine\runEngine;
 
+function findGcd($num1, $num2)
+{
+    $gcd = $num1 < $num2 ? $num1 : $num2;
+    while ($num1 % $gcd > 0 || $num2 % $gcd > 0) {
+        $gcd--;
+    }
+    return $gcd;
+}
+
 function gcdGame()
 {
-    $rulesGame = 'Find the greatest common divisor of given numbers.';
+    $gameRule = 'Find the greatest common divisor of given numbers.';
 
-    $gcdGame = function () {
+    $makeQuestionAndAnswer = function () {
         $num1 = rand(0, 100);
         $num2 = rand(0, 100);
-        $nod = $num1 < $num2 ? $num1 : $num2;
-        while ($num1 % $nod > 0 || $num2 % $nod > 0) {
-            $nod--;
-        }
-        $answerCorrect = $nod;
-        return ['question' => $num1 . ' ' . $num2, 'answerCorrect' => $answerCorrect];
+        $correctAnswer = findGcd($num1, $num2);
+        return ['question' => "{$num1} {$num2}", 'correctAnswer' => $correctAnswer];
     };
-    runEngine($gcdGame, $rulesGame);
+    runEngine($makeQuestionAndAnswer, $gameRule);
 }

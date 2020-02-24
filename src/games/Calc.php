@@ -6,9 +6,9 @@ use function Src\Engine\runEngine;
 
 function randomOperand()
 {
-    $operandArr = ['+', '-', '*'];
+    $operands = ['+', '-', '*'];
 
-    return $operandArr[rand(0, count($operandArr) - 1)];
+    return $operands[array_rand($operands, 1)];
 }
 
 function makeOperation($operand, $argument1, $argument2)
@@ -24,21 +24,20 @@ function makeOperation($operand, $argument1, $argument2)
             $result =  $argument1 * $argument2;
             break;
         default:
-            $result = null;
-            break;
+            return null;
     }
     return $result;
 }
 
 function calcGame()
 {
-    $rulesGame = "What is the result of the expression?";
-    $calcGame = function () {
+    $gameRule = "What is the result of the expression?";
+    $makeQuestionAndAnswer = function () {
         $argument1 = rand(1, 100);
         $argument2 = rand(1, 100);
         $operand = randomOperand();
-        $answerCorrect = makeOperation($operand, $argument1, $argument2);
-        return ['question' => $argument1 . ' ' . $operand . ' ' . $argument2, 'answerCorrect' => $answerCorrect];
+        $correctAnswer = makeOperation($operand, $argument1, $argument2);
+        return ['question' => "{$argument1} {$operand} {$argument2}", 'correctAnswer' => $correctAnswer];
     };
-    runEngine($calcGame, $rulesGame);
+    runEngine($makeQuestionAndAnswer, $gameRule);
 }

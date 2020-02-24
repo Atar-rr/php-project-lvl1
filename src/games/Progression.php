@@ -8,27 +8,33 @@ function makeProgression()
 {
     $startNum = rand(0, 100);
     $makeNextNum = 2;
-    $progressionArr = [$startNum];
+    $progressionsCount = 10;
+    $progressions = [];
 
-    for ($j = 0; $j < 10; $j++) {
+    for ($j = 0; $j < $progressionsCount; $j++) {
         $startNum += $makeNextNum;
-        $progressionArr [] = $startNum;
+        $progressions [] = $startNum;
     }
-    return $progressionArr;
+    return $progressions;
+}
+
+function makeQuestion($progressions, $randSkip)
+{
+    $progressions[$randSkip] = '..';
+    return implode(' ', $progressions);
 }
 
 function progressionGame()
 {
-    $rulesGame = 'What number is missing in the progression?';
+    $gameRule = 'What number is missing in the progression?';
 
-    $progressionGame = function () {
-        $progressionArr = makeProgression();
-        $randMiss = rand(0, 10);
-        $answerCorrect = $progressionArr[$randMiss];
-        $progressionArr[$randMiss] = '..';
-        $progressionStr = implode(' ', $progressionArr);
-        return ['question' => $progressionStr, 'answerCorrect' => $answerCorrect];
+    $makeQuestionAndAnswer = function () {
+        $progressions = makeProgression();
+        $randSkip = rand(0, count($progressions) - 1);
+        $correctAnswer = $progressions[$randSkip];
+        $question = makeQuestion($progressions, $randSkip);
+        return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
 
-    runEngine($progressionGame, $rulesGame);
+    runEngine($makeQuestionAndAnswer, $gameRule);
 }

@@ -4,7 +4,7 @@ namespace Braingames\Prime;
 
 use function Src\Engine\runEngine;
 
-function isprime($num)
+function isPrime($num)
 {
     if ($num <= 1) {
         return false;
@@ -19,12 +19,12 @@ function isprime($num)
 
 function primeGame()
 {
-    $rulesGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-    $primeGame = function () {
-        $randomNum = rand(0, 100);
-        $answerCorrect = isprime($randomNum) ? 'yes' : 'no';
-        return ['question' => $randomNum, 'answerCorrect' => $answerCorrect];
+    $makeQuestionAndAnswer = function () {
+        $question = rand(0, 100);
+        $correctAnswer = isPrime($question) ? 'yes' : 'no';
+        return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
-    runEngine($primeGame, $rulesGame);
+    runEngine($makeQuestionAndAnswer, $gameRule);
 }

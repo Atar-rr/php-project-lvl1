@@ -4,19 +4,19 @@ namespace Braingames\Even;
 
 use function Src\Engine\runEngine;
 
-function makeCorrectAnswer($randomNumber)
+function isEven($randomNumber)
 {
-    return $randomNumber % 2 === 0 ? true : false;
+    return $randomNumber % 2 === 0;
 }
 
 function evenGame()
 {
-    $rulesGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-    $evenGame = function () {
-        $randomNumber = rand(0, 100);
-        $answerCorrect = makeCorrectAnswer($randomNumber) ? 'yes' : 'no';
-        return ['question' => $randomNumber, 'answerCorrect' => $answerCorrect];
+    $makeQuestionAndAnswer = function () {
+        $question = rand(0, 100);
+        $correctAnswer = isEven($question) ? 'yes' : 'no';
+        return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
-    runEngine($evenGame, $rulesGame);
+    runEngine($makeQuestionAndAnswer, $gameRule);
 }
