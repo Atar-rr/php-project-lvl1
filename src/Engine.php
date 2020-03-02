@@ -5,7 +5,7 @@ namespace Src\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function runEngine($gameFunc, $gameRule)
+function runEngine($makeQuestionAndAnswer, $gameRule)
 {
     $roundsCount = 3;
     line('Welcome to the Brain Games!');
@@ -14,10 +14,10 @@ function runEngine($gameFunc, $gameRule)
     line("Hello, $name!");
 
     for ($i = 0; $i < $roundsCount; $i++) {
-        ['correctAnswer' => $correctAnswer, 'question' => $question] = $gameFunc();
+        ['correctAnswer' => $correctAnswer, 'question' => $question] = $makeQuestionAndAnswer();
         line("Question: $question");
         $userAnswer = prompt("Your answer");
-        if ($correctAnswer == (string)$userAnswer) {
+        if ($correctAnswer == $userAnswer) {
             line('Correct');
         } else {
             line("$userAnswer is wrong answer ;(. Correct answer was $correctAnswer. ");
