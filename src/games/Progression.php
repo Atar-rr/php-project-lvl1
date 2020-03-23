@@ -1,14 +1,14 @@
 <?php
 
-namespace Braingame\Progression;
+namespace Braingames\games\Progression;
 
-use function Src\Engine\runEngine;
+use function Braingames\Engine\runEngine;
 
 function makeStepForProgression()
 {
-    $startStep = rand(0, 100);
+    $startProgression = rand(0, 100);
     $nextStep = rand(1, 5);
-    return ([$startStep, $nextStep]);
+    return ([$startProgression, $nextStep]);
 }
 
 function makeProgression($startStep, $nextStep, $progressionLen)
@@ -34,8 +34,8 @@ function progressionGame()
 
     $makeQuestionAndAnswer = function () {
         $progressionLen = 10;
-        [$startStep, $nextStep] = makeStepForProgression();
-        $progressions = makeProgression($startStep, $nextStep, $progressionLen);
+        [$startProgression, $nextStep] = makeStepForProgression();
+        $progressions = makeProgression($startProgression, $nextStep, $progressionLen);
         $randSkip = array_rand($progressions);
         $correctAnswer = $progressions[$randSkip];
         $question = makeQuestion($progressions, $randSkip);

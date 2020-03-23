@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function Braingame\Progression\progressionGame;
+use function Braingames\games\Progression\progressionGame;
 
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';

@@ -1,8 +1,8 @@
 <?php
 
-namespace Braingames\Even;
+namespace Braingames\games\Even;
 
-use function Src\Engine\runEngine;
+use function Braingames\Engine\runEngine;
 
 function isEven($randomNumber)
 {

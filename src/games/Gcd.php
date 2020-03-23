@@ -1,8 +1,8 @@
 <?php
 
-namespace Braingames\Gcd;
+namespace Braingames\games\Gcd;
 
-use function Src\Engine\runEngine;
+use function Braingames\Engine\runEngine;
 
 function findGcd($num1, $num2)
 {
